@@ -8,6 +8,10 @@
 #ifndef POINT_H_
 #define POINT_H_
 
+#include <iostream>
+#include <string>
+#include <proj_api.h>
+
 namespace C
 {
   namespace Geometry
@@ -18,10 +22,16 @@ namespace C
       double	X;
       double	Y;
       double	Z;
+      projPJ	CRS;
       
-      /*CRS -> reference sur la projection*/
+      /* Cplien Form*/
       Point();
-      virtual ~Point();
+      Point(const Point &);
+      Point	&operator=(const Point &);
+      virtual	~Point();
+
+      Point(double X, double Y, double Z, std::string proj);
+      void	ToString();
     };
   }
 }
