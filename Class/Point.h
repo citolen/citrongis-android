@@ -30,9 +30,9 @@ namespace C
       Point	&operator=(const Point &);
       virtual	~Point();
 
-      Point(double X, double Y, double Z, std::string proj);
-      Point(double X, double Y, double Z, projPJ CRS);
-      void	ToString();
+      Point(const double X, const double Y, const double Z, const std::string proj);
+      Point(const double X, const double Y, const double Z, const projPJ CRS);
+      void	ToString() const;
     };
   }
 }

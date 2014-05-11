@@ -33,7 +33,7 @@ C::Geometry::Point &C::Geometry::Point::operator=(const Point &other)
   return (*this);
 }
 
-C::Geometry::Point::Point(double X, double Y, double Z, std::string proj)
+C::Geometry::Point::Point(const double X, const double Y, const double Z, const std::string proj)
 {
   this->X = X;
   this->Y = Y;
@@ -48,7 +48,7 @@ C::Geometry::Point::Point(double X, double Y, double Z, std::string proj)
     }
 }
 
-C::Geometry::Point::Point(double X, double Y, double Z, projPJ CRS)
+C::Geometry::Point::Point(const double X, const double Y, const double Z, const projPJ CRS)
 {
   this->X = X;
   this->Y = Y;
@@ -61,7 +61,7 @@ C::Geometry::Point::~Point() {
     pj_free(this->CRS);
 }
 
-void	C::Geometry::Point::ToString()
+void	C::Geometry::Point::ToString() const
 {
   /*
     Exemple of print
