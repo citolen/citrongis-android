@@ -1,6 +1,7 @@
 NAME=	test
 
 SRC=	Point.cpp\
+	CoordinatesHelper.cpp\
 	main.cpp
 
 OBJ=	$(SRC:.cpp=.o)
