@@ -31,6 +31,7 @@ namespace C
       virtual	~Point();
 
       Point(double X, double Y, double Z, std::string proj);
+      Point(double X, double Y, double Z, projPJ CRS);
       void	ToString();
     };
   }

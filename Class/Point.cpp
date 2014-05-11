@@ -11,6 +11,7 @@ C::Geometry::Point::Point() {
   this->X = 0;
   this->Y = 0;
   this->Z = 0;
+  this->CRS = NULL;
 }
 
 C::Geometry::Point::Point(const Point &cpy) {
@@ -37,11 +38,27 @@ C::Geometry::Point::Point(double X, double Y, double Z, std::string proj)
   this->X = X;
   this->Y = Y;
   this->Z = Z;
-  this->CRS = pj_init_plus(proj.c_str());
+  if ((this->CRS = pj_init_plus(proj.c_str())) == NULL)
+    {
+      /*
+      ** Execption ??
+      ** Display Errno : std::cout << pj_strerrno(*(pj_get_errno_ref())) << std::endl;
+      */
+      exit (EXIT_FAILURE);
+    }
+}
+
+C::Geometry::Point::Point(double X, double Y, double Z, projPJ CRS)
+{
+  this->X = X;
+  this->Y = Y;
+  this->Z = Z;
+  this->CRS = CRS;
 }
 
 C::Geometry::Point::~Point() {
-  pj_free(this->CRS);
+  if (this->CRS != NULL)
+    pj_free(this->CRS);
 }
 
 void	C::Geometry::Point::ToString()
