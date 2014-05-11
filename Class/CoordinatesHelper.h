@@ -26,8 +26,8 @@ namespace C
       CoordinatesHelper	&operator=(const CoordinatesHelper &);
       virtual	~CoordinatesHelper();
 
-      C::Geometry::Point	TransformTo(const C::Geometry::Point pt, const projPJ CRS);
-      C::Geometry::Point	TransformTo(const C::Geometry::Point pt, const std::string proj);
+      static C::Geometry::Point	TransformTo(const C::Geometry::Point &pt, const projPJ &CRS);
+      static C::Geometry::Point	TransformTo(const C::Geometry::Point &pt, const std::string &proj);
     };
   }
 }

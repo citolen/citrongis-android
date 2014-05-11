@@ -28,7 +28,7 @@ C::Helpers::CoordinatesHelper::~CoordinatesHelper()
 
 }
 
-C::Geometry::Point	C::Helpers::CoordinatesHelper::TransformTo(const C::Geometry::Point pt, const projPJ CRS)
+C::Geometry::Point	C::Helpers::CoordinatesHelper::TransformTo(const C::Geometry::Point &pt, const projPJ &CRS)
 {
   double	tmpX = pt.X;
   double	tmpY = pt.Y;
@@ -54,7 +54,7 @@ C::Geometry::Point	C::Helpers::CoordinatesHelper::TransformTo(const C::Geometry:
   return (C::Geometry::Point(tmpX, tmpY, tmpZ, CRS));
 }
 
-C::Geometry::Point C::Helpers::CoordinatesHelper::TransformTo(const C::Geometry::Point pt, const std::string proj)
+C::Geometry::Point C::Helpers::CoordinatesHelper::TransformTo(const C::Geometry::Point &pt, const std::string &proj)
 {
   double	tmpX = pt.X;
   double	tmpY = pt.Y;
