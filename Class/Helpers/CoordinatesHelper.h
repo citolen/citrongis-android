@@ -17,12 +17,13 @@ namespace C
   namespace Helpers
   {
     class CoordinatesHelper {      
+    private:
+      CoordinatesHelper();
+      CoordinatesHelper(const CoordinatesHelper &);
       
     public:
       
       /* Coplien Form*/
-      CoordinatesHelper();
-      CoordinatesHelper(const CoordinatesHelper &);
       CoordinatesHelper	&operator=(const CoordinatesHelper &);
       virtual	~CoordinatesHelper();
 
