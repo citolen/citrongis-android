@@ -19,12 +19,12 @@ namespace C
     class BoundingBox {
       
     public:
-      Vector2	topLeft;
-      Vector2	topRight;
-      Vector2	bottomLeft;
-      Vector2	bottomRight;
+      Vector2	TopLeft;
+      Vector2	TopRight;
+      Vector2	BottomLeft;
+      Vector2	BottomRight;
 
-      /* Cplien Form*/
+      /* Coplien Form*/
       BoundingBox();
       BoundingBox(const Vector2 &, const Vector2 &, const Vector2 &, const Vector2 &);
       BoundingBox(const BoundingBox &);
@@ -34,9 +34,9 @@ namespace C
       /* Others Functions*/
       const std::string	toString() const;
       bool		Equals(const BoundingBox &) const;
+      const Vector2	Center() const;
 
       /*ToDo*/
-      // Center
       // Intersect
     };
   }
