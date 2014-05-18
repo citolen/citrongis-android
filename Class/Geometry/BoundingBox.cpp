@@ -47,15 +47,15 @@ C::Geometry::BoundingBox::BoundingBox(const Vector2 &BottomLeft, const Vector2 &
   this->BottomRight = BottomRight;
 }
 
-const std::string C::Geometry::BoundingBox::toString() const
+const std::string		C::Geometry::BoundingBox::toString() const
 {
-  std::stringstream tmp;
+  std::stringstream		tmp;
   
   tmp << "{ BottomLeft:" << this->BottomLeft.toString() << ", TopLeft:" << this->TopLeft.toString() << ", TopRight:" << this->TopRight.toString() << ", BottomRight:" << this->BottomRight.toString() << "}";
   return (tmp.str());
 }
 
-bool	C::Geometry::BoundingBox::Equals(const BoundingBox &other) const
+bool				C::Geometry::BoundingBox::Equals(const BoundingBox &other) const
 {
   if (this->BottomLeft.Equals(other.BottomLeft) && this->BottomRight.Equals(other.BottomRight) &&
       this->TopLeft.Equals(other.TopLeft) && this->TopRight.Equals(other.TopRight))
@@ -65,8 +65,23 @@ bool	C::Geometry::BoundingBox::Equals(const BoundingBox &other) const
 
 const C::Geometry::Vector2	C::Geometry::BoundingBox::Center() const
 {
-  double	X = (this->BottomLeft.X + this->BottomRight.X + this->TopLeft.X + this->TopRight.X) / 4.0;
-  double	Y = (this->BottomLeft.Y + this->BottomRight.Y + this->TopLeft.Y + this->TopRight.Y) / 4.0;
+  double			X = (this->BottomLeft.X + this->BottomRight.X + this->TopLeft.X + this->TopRight.X) / 4.0;
+  double			Y = (this->BottomLeft.Y + this->BottomRight.Y + this->TopLeft.Y + this->TopRight.Y) / 4.0;
 
   return (C::Geometry::Vector2(X, Y));
+}
+
+bool				C::Geometry::BoundingBox::Intersect(const BoundingBox &other) const
+{
+  if (C::Utils::Intersection::IsPointInsideRectangle(this->TopLeft, this->TopRight, this->BottomRight, this->BottomLeft, other.TopLeft) ||
+      C::Utils::Intersection::IsPointInsideRectangle(this->TopLeft, this->TopRight, this->BottomRight, this->BottomLeft, other.TopRight) ||
+      C::Utils::Intersection::IsPointInsideRectangle(this->TopLeft, this->TopRight, this->BottomRight, this->BottomLeft, other.BottomRight) ||
+      C::Utils::Intersection::IsPointInsideRectangle(this->TopLeft, this->TopRight, this->BottomRight, this->BottomLeft, other.BottomLeft))
+    return (true);
+  return (false);
+}
+
+bool				C::Geometry::BoundingBox::Intersect(const Point &other) const
+{
+  return (C::Utils::Intersection::IsPointInsideRectangle(this->TopLeft, this->TopRight, this->BottomRight, this->BottomLeft, other));
 }
