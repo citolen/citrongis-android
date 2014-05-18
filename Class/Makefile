@@ -3,12 +3,15 @@ NAME=	test
 SRC=	Geometry/Point.cpp\
 	Geometry/Vector2.cpp\
 	Geometry/Vector3.cpp\
+	Geometry/BoundingBox.cpp\
 	Helpers/CoordinatesHelper.cpp\
+	Utils/Comparison.cpp\
+	Utils/Intersection.cpp\
 	main.cpp
 
 OBJ=	$(SRC:.cpp=.o)
 
-CPPFLAGS=	-I./Geometry -I./Helpers
+CPPFLAGS=	-I./Geometry -I./Helpers -I./Utils
 
 all: $(NAME)
 
