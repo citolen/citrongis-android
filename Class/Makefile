@@ -1,10 +1,14 @@
 NAME=	test
 
-SRC=	Point.cpp\
-	CoordinatesHelper.cpp\
+SRC=	Geometry/Point.cpp\
+	Geometry/Vector2.cpp\
+	Geometry/Vector3.cpp\
+	Helpers/CoordinatesHelper.cpp\
 	main.cpp
 
 OBJ=	$(SRC:.cpp=.o)
+
+CPPFLAGS=	-I./Geometry -I./Helpers
 
 all: $(NAME)
 
