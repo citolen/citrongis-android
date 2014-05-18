@@ -45,7 +45,9 @@ C::Geometry::Vector3::~Vector3()
 
 bool	C::Geometry::Vector3::Equals(const Vector3 &other) const
 {
-  if ((this->X == other.X) && (this->Y == other.Y) && (this->Z == other.Z))
+   if (C::Utils::Comparison::Equals(this->X, other.X) &&
+       C::Utils::Comparison::Equals(this->Y, other.Y) &&
+       C::Utils::Comparison::Equals(this->Z, other.Z))
     return (true);
   return (false);
 }

@@ -41,7 +41,7 @@ C::Geometry::Vector2::~Vector2()
 
 bool	C::Geometry::Vector2::Equals(const Vector2 &other) const
 {
-  if ((this->X == other.X) && (this->Y == other.Y))
+  if (C::Utils::Comparison::Equals(this->X, other.X) && C::Utils::Comparison::Equals(this->Y, other.Y))
     return (true);
   return (false);
 }

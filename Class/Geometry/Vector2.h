@@ -11,6 +11,7 @@
 #include	<cmath>
 #include	<sstream>
 #include	<string>
+#include	"Comparison.h"
 
 namespace C
 {
