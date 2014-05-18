@@ -16,13 +16,16 @@ namespace C
   {
     class Comparison {
     private:
+      static const double	kEpsilon = 0.00001;
+
+    private:
       Comparison();
       Comparison(const Comparison &);
       
-    public:      
+    public:
       /* Coplien Form*/
       Comparison	&operator=(const Comparison &);
-      virtual	~Comparison();
+      virtual		~Comparison();
 
       /*Others Functions*/
       static bool	Equals(double, double);

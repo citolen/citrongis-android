@@ -25,7 +25,5 @@ C::Utils::Comparison::~Comparison()
 
 bool			C::Utils::Comparison::Equals(double a, double b)
 {
-  double kEpsilon = 0.00001;
-
   return (std::abs(a - b) < kEpsilon);
 }
