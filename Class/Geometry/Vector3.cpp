@@ -81,13 +81,8 @@ double	C::Geometry::Vector3::DotProduct(const Vector3 &Va, const Vector3 &Vb)
 
 const std::string	C::Geometry::Vector3::toString() const
 {
-  std::stringstream x;
-  std::stringstream y;
-  std::stringstream z;
+  std::stringstream tmp;
 
-  x << this->X;
-  y << this->Y;
-  y << this->Z;
-
-  return ("{ x:" + x.str() + ", y:" + y.str() + ", z:" + z.str() + " }");
+  tmp << "{ x:" << this->X  << ", y:" << this->Y << " }" <<  this->Z << " }";
+  return (tmp.str());
 }
