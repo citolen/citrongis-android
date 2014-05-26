@@ -5,7 +5,7 @@
  *      Author: romain
  */
 
-#include	"CoordinatesHelper.h"
+#include	"Helpers/CoordinatesHelper.h"
 
 
 C::Helpers::CoordinatesHelper::CoordinatesHelper()

@@ -9,7 +9,7 @@
 #define BOUNDINGBOX_H_
 
 #include	"Vector2.h"
-#include	"Intersection.h"
+#include	"Utils/Intersection.h"
 
 #include	<string>
 #include	<sstream>

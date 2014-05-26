@@ -5,7 +5,7 @@
  *      Author: romain
  */
 
-#include	"Intersection.h"
+#include	"Utils/Intersection.h"
 
 C::Utils::Intersection::Intersection()
 {
@@ -17,6 +17,7 @@ C::Utils::Intersection::Intersection(const Intersection &other)
 
 C::Utils::Intersection	&C::Utils::Intersection::operator=(const Intersection &other)
 {
+	return (*this);
 }
 
 C::Utils::Intersection::~Intersection()

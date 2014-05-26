@@ -5,7 +5,7 @@
  *      Author: romain
  */
 
-#include	<Vector2.h>
+#include	"Geometry/Vector2.h"
 
 C::Geometry::Vector2::Vector2()
 {

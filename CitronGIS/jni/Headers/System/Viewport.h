@@ -8,7 +8,7 @@
 #ifndef VIEWPORT_H_
 #define VIEWPORT_H_
 
-#include	"BoundingBox.h"
+#include	"Geometry/BoundingBox.h"
 
 namespace C
 {

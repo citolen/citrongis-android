@@ -8,8 +8,8 @@
 #ifndef COORDINATESHELPER_H_
 #define COORDINATESHELPER_H_
 
-#include	<Point.h>
-#include	<proj_api.h>
+#include	"Geometry/Point.h"
+#include	"proj_api.h"
 #include	<string>
 
 namespace C
