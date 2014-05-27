@@ -9,14 +9,14 @@ public class MainActivity extends Activity {
 	static {
         System.loadLibrary("CitronGIS");
     }
-	public native String getJniString();
+	public native String getVersion();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 	
-		getJniString();
+		getVersion();
 	}
 
 	@Override
