@@ -15,6 +15,6 @@ jstring Java_com_example_citrongis_MainActivity_getVersion(JNIEnv *env,jobject t
 {
 	const char *desc = pj_get_release();
 	LOGW("%s", desc);
-	return (env->NewStringUTF("Hello smal test"));
+	return (env->NewStringUTF(desc));
 }
 

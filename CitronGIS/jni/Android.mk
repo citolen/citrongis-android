@@ -22,8 +22,6 @@ LOCAL_LDLIBS    := -llog -landroid -lEGL -lGLESv1_CM
 LOCAL_STATIC_LIBRARIES := android_native_app_glue
 LOCAL_STATIC_LIBRARIES += clibs
 LOCAL_SHARED_LIBRARIES := proj
-##LOCAL_LDFLAGS := -Wl,-soname,. -Wl,-soname,/data/libs
-##LOCAL_LDFLAGS := -Wl,-soname,$(LOCAL_PATH)/libs
 include $(BUILD_SHARED_LIBRARY)
 
 $(call import-module,android/native_app_glue)
