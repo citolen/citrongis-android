@@ -8,8 +8,8 @@
 #ifndef INTERSECTION_H_
 #define INTERSECTION_H_
 
-#include	"Vector2.h"
-#include	"Point.h"
+#include	"Geometry/Vector2.h"
+#include	"Geometry/Point.h"
 
 namespace C
 {

@@ -5,7 +5,7 @@
  *      Author: romain
  */
 
-#include	"Comparison.h"
+#include	"Utils/Comparison.h"
 
 C::Utils::Comparison::Comparison()
 {
@@ -17,6 +17,7 @@ C::Utils::Comparison::Comparison(const Comparison &other)
 
 C::Utils::Comparison	&C::Utils::Comparison::operator=(const Comparison &other)
 {
+	return (*this);
 }
 
 C::Utils::Comparison::~Comparison()

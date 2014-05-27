@@ -63,8 +63,5 @@ C::Geometry::Point::~Point() {
 
 const std::string	&C::Geometry::Point::toString() const
 {
-  /*
-    Exemple of print
-    return ("{ x: " + this.X + ", y: " + this.Y + ", z: " + this.Z + ", CRS: " + (this.CRS.name || this.CRS.title || this.CRS) + "}");
-  */
+	//Faudra faire le ToString !!! :D
 }

@@ -16,6 +16,7 @@ LOCAL_C_INCLUDES += /usr/local/include/
 LOCAL_SRC_FILES :=	Sources/main.cpp
 			##		Sources/Geometry/Point.cpp
 
+
 ## Libraries
 LOCAL_LDLIBS    := -llog -landroid -lEGL -lGLESv1_CM -Wl,-rpath=$(LOCAL_PATH)/libs
 LOCAL_STATIC_LIBRARIES := android_native_app_glue
