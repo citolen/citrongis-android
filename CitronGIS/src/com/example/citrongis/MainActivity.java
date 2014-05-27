@@ -2,22 +2,21 @@ package com.example.citrongis;
 
 import android.os.Bundle;
 import android.app.Activity;
-import android.util.Log;
 import android.view.Menu;
-import org.proj4.PJ;
+
 
 public class MainActivity extends Activity {
-
 	static {
         System.loadLibrary("CitronGIS");
     }
+	public native String getJniString();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		
-        Log.d("PROJ4", PJ.getVersion());
+	
+		getJniString();
 	}
 
 	@Override
