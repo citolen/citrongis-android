@@ -2,12 +2,6 @@
 #include "defines.h"
 #include "proj_api.h"
 
-/*void android_main(struct android_app* state) {
-	app_dummy();
-
-	LOGW("APPLICATION STARTED");
-}*/
-
 #include <string.h>
 #include <jni.h>
 #include <android/log.h>
