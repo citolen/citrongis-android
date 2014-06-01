@@ -14,7 +14,20 @@ LOCAL_C_INCLUDES += /usr/local/include/
 
 ## Sources files
 LOCAL_SRC_FILES :=	Sources/main.cpp \
-					Sources/Geometry/Point.cpp
+					
+LOCAL_SRC_FILES	+=	Sources/Geometry/BoundingBox.cpp \
+					Sources/Geometry/Point.cpp \
+					Sources/Geometry/Vector2.cpp \
+					Sources/Geometry/Vector3.cpp \
+
+LOCAL_SRC_FILES	+=	Sources/Utils/Comparison.cpp \
+					Sources/Utils/Intersection.cpp \
+
+LOCAL_SRC_FILES	+=	Sources/Helpers/CoordinatesHelper.cpp \
+					Sources/Helpers/ProjectionsHelper.cpp \
+
+
+LOCAL_SRC_FILES	+=	Sources/System/Viewport.cpp \
 
 
 ## Libraries

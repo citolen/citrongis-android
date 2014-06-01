@@ -31,13 +31,16 @@ namespace C
       virtual	~Vector3();
 
       /* Others Functions*/
-      bool		Equals(const Vector3 &) const;
-      double		Distance(const Vector3 &) const;
-      double		DotProduct(const Vector3 &) const;
-      const std::string	toString() const;
-      static bool	Equals(const Vector3 &, const Vector3 &);    
-      static double	Distance(const Vector3 &, const Vector3 &);
-      static double	DotProduct(const Vector3 &, const Vector3 &);
+      bool					Equals(const Vector3 &) const;
+      double				Distance(const Vector3 &) const;
+      double				DotProduct(const Vector3 &) const;
+      Vector3				Cross(const Vector3 &) const;
+
+      const std::string		toString() const;
+      static bool			Equals(const Vector3 &, const Vector3 &);
+      static double			Distance(const Vector3 &, const Vector3 &);
+      static double			DotProduct(const Vector3 &, const Vector3 &);
+      static Vector3		Cross(const Vector3 &, const Vector3 &);
     };
   }
 }

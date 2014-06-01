@@ -88,3 +88,17 @@ const std::string	C::Geometry::Vector3::toString() const
   tmp << "{ x:" << this->X  << ", y:" << this->Y << " }" <<  this->Z << " }";
   return (tmp.str());
 }
+
+C::Geometry::Vector3	C::Geometry::Vector3::Cross(const Vector3 &other) const
+{
+	return (C::Geometry::Vector3(
+			(this->Y * other.Z) - (this->Z * other.Y),
+			(this->Z * other.X) - (this->X * other.Z),
+			(this->X * other.Y) - (this->Y * other.X)
+			));
+}
+
+C::Geometry::Vector3		C::Geometry::Vector3::Cross(const Vector3 &Va, const Vector3 &Vb)
+{
+	return (Va.Cross(Vb));
+}
