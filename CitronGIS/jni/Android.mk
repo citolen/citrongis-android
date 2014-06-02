@@ -8,6 +8,11 @@ include $(PREBUILT_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 LOCAL_MODULE    := CitronGIS
 
+## TARGET_ARCH_ABI := armeabi armeabi-v7a
+## TARGET_ARCH_ABI += armeabi-v7a
+
+APP_ABI := all
+
 ## Includes path
 LOCAL_C_INCLUDES += $(LOCAL_PATH)/Headers/
 LOCAL_C_INCLUDES += /usr/local/include/
