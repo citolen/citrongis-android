@@ -1,13 +1,14 @@
 package com.example.citrongis;
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
 
 
 public class MainActivity extends Activity {
 	static {
+        System.loadLibrary("proj");
         System.loadLibrary("CitronGIS");
     }
 	public native String getVersion();

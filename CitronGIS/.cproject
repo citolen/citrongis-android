@@ -20,7 +20,7 @@
 					<folderInfo id="com.android.toolchain.gcc.395602239.322526228" name="/" resourcePath="">
 						<toolChain id="com.android.toolchain.gcc.2141921890" name="com.android.toolchain.gcc" superClass="com.android.toolchain.gcc">
 							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF" id="com.android.targetPlatform.818342686" isAbstract="false" superClass="com.android.targetPlatform"/>
-							<builder arguments="NDK_DEBUG=1" command="ndk-build" id="com.android.builder.787163746" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Android Builder" superClass="com.android.builder">
+							<builder arguments="NDK_DEBUG=1" autoBuildTarget="" cleanBuildTarget="clean" command="ndk-build" enableAutoBuild="false" enableCleanBuild="true" enabledIncrementalBuild="true" id="com.android.builder.787163746" incrementalBuildTarget="" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Android Builder" superClass="com.android.builder">
 								<outputEntries>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="obj"/>
 									<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="outputPath" name="libs"/>
@@ -48,8 +48,11 @@
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="com.android.AndroidPerProjectProfile"/>
 		</scannerConfigBuildInfo>
 	</storageModule>
-	<storageModule moduleId="refreshScope" versionNumber="1">
-		<resource resourceType="PROJECT" workspacePath="/CitronGIS"/>
+	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="Default">
+			<resource resourceType="PROJECT" workspacePath="/CitronGIS"/>
+		</configuration>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>
