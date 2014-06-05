@@ -19,7 +19,7 @@ BOOST_AUTO_TEST_CASE(Vector2)
 
   std::cout << "                      Start Equals" << std::endl;
   BOOST_CHECK(!(a.Equals(b)));
-  BOOST_CHECK(a.Equals(b));
+  //BOOST_CHECK(a.Equals(b));
   std::cout << "                      End Equals" << std::endl;
   
   std::cout << "                      Start Distance" << std::endl;
@@ -42,7 +42,7 @@ BOOST_AUTO_TEST_CASE(Vector3)
 
   std::cout << "                      Start Equals" << std::endl;
   BOOST_CHECK(!(a.Equals(b)));
-  BOOST_CHECK(a.Equals(b));
+  //BOOST_CHECK(a.Equals(b));
   std::cout << "                      End Equals" << std::endl;
   
   std::cout << "                      Start Distance" << std::endl;

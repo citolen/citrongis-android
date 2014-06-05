@@ -1,6 +1,7 @@
 NAME=	Test-CitronGIS
 
-SRC=	main.cpp \
+SRC=	vectors.cpp \
+	boundingBox.cpp \
 	../Sources/Geometry/Point.cpp \
 	../Sources/Geometry/Vector2.cpp \
 	../Sources/Geometry/Vector3.cpp \
