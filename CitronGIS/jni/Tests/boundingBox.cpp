@@ -4,6 +4,10 @@
 #include	"../Headers/Geometry/BoundingBox.h"
 #include	"../Headers/Geometry/Vector2.h"
 
+/*
+** All the time true in BOOST_CHECK !!!
+ */
+
 BOOST_AUTO_TEST_CASE(BoundingBox)
 {
   C::Geometry::BoundingBox a = C::Geometry::BoundingBox(C::Geometry::Vector2(0, 0),
