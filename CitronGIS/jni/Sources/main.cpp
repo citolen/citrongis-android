@@ -10,6 +10,7 @@
 
 extern "C" {
 	jstring Java_com_example_citrongis_MainActivity_getVersion(JNIEnv *env,jobject thiz);
+	jstring Java_com_example_citrongis_MainActivity_getAutors(JNIEnv *env,jobject thiz);
 }
 
 jstring Java_com_example_citrongis_MainActivity_getVersion(JNIEnv *env,jobject thiz)
@@ -18,3 +19,7 @@ jstring Java_com_example_citrongis_MainActivity_getVersion(JNIEnv *env,jobject t
 	return (env->NewStringUTF(desc));
 }
 
+jstring Java_com_example_citrongis_MainActivity_getAutors(JNIEnv *env,jobject thiz)
+{
+	return (env->NewStringUTF("Romain Gabilan && Mathieu Van Westerlaak"));
+}
