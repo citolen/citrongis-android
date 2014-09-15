@@ -12,11 +12,11 @@
       $ python download-deps.py
       $ python setup.py
    2. Set one more env variable
-      ``` shell
-      $ export COCOS2DX=`pwd`
-      ```
+      > export COCOS2DX=`pwd`
       **or**
-      $ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
+      <code>
+      echo "export COCOS2DX=`pwd`" >> ~/.bashrc
+      </code>
 
 ## Building project
 		
