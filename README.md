@@ -25,7 +25,7 @@ $ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
 		
 1. Import libcocos2dx library project:
 	1. File->New->Project->Android Project From Existing Code.
-	2. Click **Browse** button and open `cocos2d-x/cocos2dx/platform/android/java` directory.
+	2. Click **Browse** button and open `cocos2d-x/cocos2dx/cocos/platform/android/java` directory.
 	3. Click **Finish** to add project.
 	
 2. Configuration CitronGIS
