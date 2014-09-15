@@ -14,9 +14,9 @@
    2. Set one more env variable
       > export COCOS2DX=`pwd`
       **or**
-      ~~~~
-      echo "export COCOS2DX=`pwd`" >> ~/.bashrc
-      ~~~~
+``` shell
+echo "export COCOS2DX=`pwd`" >> ~/.bashrc
+```
 
 ## Building project
 		
