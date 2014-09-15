@@ -7,7 +7,6 @@
 
 ## Installation
 
-1. Download deps and set env variables:
    1. In cocos directory
 ``` shell
 $ python download-deps.py
@@ -17,7 +16,7 @@ $ python setup.py
 ``` shell
 $ export COCOS2DX=`pwd`
 ```
-      **or**
+**or**
 ``` shell
 $ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
 ```
