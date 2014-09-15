@@ -9,13 +9,17 @@
 
 1. Download deps and set env variables:
    1. In cocos directory
-      $ python download-deps.py
-      $ python setup.py
+``` shell
+$ python download-deps.py
+$ python setup.py
+```
    2. Set one more env variable
-      > export COCOS2DX=`pwd`
+``` shell
+$ export COCOS2DX=`pwd`
+```
       **or**
 ``` shell
-echo "export COCOS2DX=`pwd`" >> ~/.bashrc
+$ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
 ```
 
 ## Building project
@@ -33,4 +37,6 @@ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
 
 Once the project has been generated.
 You can install the apk with the following line:
-    $ adb install $(PATH_TO_PROJECT)/bin/CitronGIS.apk
+``` shell
+$ adb install $(PATH_TO_PROJECT)/bin/CitronGIS.apk
+```
