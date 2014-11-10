@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="${packageName}.${activityClass}" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:padding="15dp"
+        android:src="@drawable/menu_user" />
+    
+    <LinearLayout
+        android:id="@+id/from_email"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/imageView1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/form_instruction_bottom"
+            android:gravity="center"
+            android:text="@string/activity_signup_form_email"
+            android:textColor="@color/form_instruction_text_color" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/form_input_top_bottom" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/passwordLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/from_email"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/form_instruction_bottom"
+            android:gravity="center"
+            android:text="@string/activity_signup_form_password"
+            android:textColor="@color/form_instruction_text_color" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:background="@drawable/form_input_bottom" >
+        </EditText>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/passwordagainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/passwordLayout"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="62dp"
+            android:layout_height="match_parent"
+            android:background="@color/form_instruction_background"
+            android:gravity="center"
+            android:text="@string/activity_signup_form_passwordagain"
+            android:textColor="@color/form_instruction_text_color" />
+
+        <EditText
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:background="@drawable/form_input_bottom" >
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/generalcondition_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/passwordagainLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <CheckBox
+            android:id="@+id/toggleButton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/generalconditions_textview"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            android:text="@string/activity_signup_form_generalconditions_text"
+            android:textColor="@color/citrongis_text_color_dark" />
+    </LinearLayout>
+    
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/generalcondition_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:background="@drawable/menu_button"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/activity_signup_submit_button"
+        android:textColor="@drawable/menu_button" />
+
+</RelativeLayout>

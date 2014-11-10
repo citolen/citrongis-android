@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Default Theme -->
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">#16a085</item>
+        <item name="android:background">#ffffff</item>
+    </style>
+    
+    <!-- Default Theme without top title bar -->
+    <style name="AppThemeWithoutActionBar" parent="@android:style/Theme.Light.NoTitleBar">
+        <item name="android:textColorPrimary">#ffff0000</item>
+    </style>
+    
+</resources>

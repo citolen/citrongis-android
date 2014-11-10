@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true" android:color="@color/button_pressed_text_color">
+        <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="2dp" />
+                    <solid android:color="@color/button_pressed_border" />
+                </shape>
+           	</item>
+            <item android:bottom="1dp" android:left="1dp" android:right="1dp" android:top="1dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="2dp" />
+                    <solid android:color="@color/button_pressed_background" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    
+    <item android:state_focused="true" android:color="@color/button_pressed_text_color">
+        <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+            <item>
+                <shape android:shape="rectangle">
+                    <corners android:radius="2dp" />
+                    <solid android:color="@color/button_pressed_border" />
+                </shape>
+           	</item>
+            <item android:bottom="1dp" android:left="1dp" android:right="1dp" android:top="1dp">
+                <shape android:shape="rectangle">
+                    <corners android:radius="2dp" />
+                    <solid android:color="@color/button_pressed_background" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+    
+    <item android:color="@color/button_text_color">
+        <layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+		    <item>
+		        <shape android:shape="rectangle" >
+		            <corners android:radius="2dp" />
+		            <solid android:color="@color/button_border" />
+		        </shape>
+		    </item>
+		    <item android:bottom="1dp" android:left="1dp" android:right="1dp" android:top="1dp">
+		        <shape android:shape="rectangle" >
+		            <corners android:radius="2dp" />
+		            <solid android:color="@color/button_background" />
+		        </shape>
+		    </item>
+		</layer-list>
+    </item>
+
+</selector>

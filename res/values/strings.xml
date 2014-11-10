@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">CitronGIS</string>
+    <string name="mybutton">My Button</string>
+    <string name="title_activity_login">My Account</string>
+    <string name="hello_world">Hello world!</string>
+
+    <!-- activity_login -->
+    <string name="activity_login_email_button">email</string>
+    <string name="activity_login_password_button">pass</string>
+    <string name="activity_login_remember_button">remember me</string>
+    <string name="activity_login_connect_button">connect</string>
+    <string name="activity_login_forget_button">I don\'t remember</string>
+    <string name="activity_login_signup_button">sign up</string>
+
+    <!-- activity_signup -->
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="activity_signup_form_email">email</string>
+    <string name="activity_signup_form_password">pass</string>
+    <string name="activity_signup_form_passwordagain">again</string>
+    <string name="activity_signup_form_generalconditions_text">I accept the</string>
+    <string name="activity_signup_form_generalconditions_link">general conditions</string>
+    <string name="activity_signup_submit_button">signup</string>
+    <string name="title_activity_general_conditions">GeneralConditionsActivity</string>
+    <string name="action_settings">Settings</string>
+
 </resources>

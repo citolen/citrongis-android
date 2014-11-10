@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="transparent">#00000000</color>
+	<color name="sidebar_background_color">#ee2c3e50</color>
+	<color name="citrongis_text_color">#199469</color>
+	<color name="citrongis_text_color_dark">#34495e</color>
+	
+	<!-- Default form field colors -->
+	<color name="form_instruction_background">#199469</color>
+	<color name="form_instruction_text_color">#ffffff</color>
+	<color name="form_instruction_border_color">#ffffff</color>
+	<color name="form_input_background">#ffffff</color>
+	<color name="form_input_border_color">#199469</color>
+	
+	<!-- Default button colors -->
+	<color name="button_background">#ffffffff</color>
+	<color name="button_border">#199469</color>
+	<color name="button_text_color">#199469</color>
+	<color name="button_pressed_background">#ffffffff</color>
+	<color name="button_pressed_border">#34495e</color>
+	<color name="button_pressed_text_color">#34495e</color>
+	
+	<!-- Danger button colors -->
+	<color name="button_danger_background">#ffffffff</color>
+	<color name="button_danger_border">#e74c3c</color>
+	<color name="button_danger_text_color">#e74c3c</color>
+	<color name="button_danger_pressed_background">#ffffffff</color>
+	<color name="button_danger_pressed_border">#34495e</color>
+	<color name="button_danger_pressed_text_color">#34495e</color>
+	
+</resources>

@@ -1,0 +1,16 @@
+<html>
+
+<body id="mybody">
+
+<h1>Hello, WebView</h1>
+<input type="button" value="js binding" onClick="Android.showToast('hello from javascript')" />
+
+<script>
+function jsfunc() {
+	console.log("jsfunc called");
+	element = document.getElementById("mybody");
+	element.style.background = '#'+Math.random().toString(16).substr(-6);
+}
+</script>
+</body>
+</html>
