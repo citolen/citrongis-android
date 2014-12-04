@@ -1,5 +1,6 @@
 package org.cocos2dx.cpp_empty_test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -19,14 +20,20 @@ public class GeneralConditionsActivity extends BaseInterfaceActivity {
 		decline.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				context.closeActivity();
+				Intent intent = new Intent();
+				intent.putExtra("conditions","declined");
+				setResult(RESULT_OK, intent);
+				context.finish();
 			}
 		});
 		Button accept = (Button)findViewById(R.id.button_accept);
 		accept.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				context.closeActivity();
+				Intent intent = new Intent();
+				intent.putExtra("conditions","accepted");
+				setResult(RESULT_OK, intent);
+				context.finish();
 			}
 		});
 	}

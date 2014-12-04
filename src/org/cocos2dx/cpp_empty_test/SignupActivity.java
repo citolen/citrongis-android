@@ -7,7 +7,9 @@ import android.text.SpannableString;
 import android.text.method.LinkMovementMethod;
 import android.text.method.MovementMethod;
 import android.text.style.ClickableSpan;
+import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class SignupActivity extends BaseInterfaceActivity {
@@ -24,7 +26,8 @@ public class SignupActivity extends BaseInterfaceActivity {
 	        @Override
 	        public void onClick(View v) {
 	        	Intent intent = new Intent(context, GeneralConditionsActivity.class);
-	            startActivity(intent);
+//	            startActivity(intent);
+	            startActivityForResult(intent, 1);
 	        }
 	    });
 		
@@ -32,6 +35,18 @@ public class SignupActivity extends BaseInterfaceActivity {
 		tv.append(" ");
 	    tv.append(link);
 	    makeLinksFocusable(tv);
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+	    if (requestCode == 1) {
+	         if(resultCode == RESULT_OK) {
+	        	 String conditions = data.getStringExtra("conditions");
+	        	 Log.d("SIGNUP_ACTIVITY", conditions);
+	        	 CheckBox checkBox = (CheckBox)findViewById(R.id.generalConditionsToggleButton);
+	             checkBox.setChecked(conditions.equals("accepted") ? true : false);
+	         }
+	    }
 	}
 	
 	private SpannableString makeLinkSpan(CharSequence text, View.OnClickListener listener) {

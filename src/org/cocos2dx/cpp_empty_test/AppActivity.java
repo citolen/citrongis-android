@@ -23,15 +23,20 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.cpp_empty_test;
 
+import java.io.IOException;
+import java.io.InputStream;
+
 import javascript.CodeBinding;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.models.ImageAdapter;
 
+import org.cocos2dx.cpp_empty_test.R
 import android.annotation.SuppressLint;
 import android.app.ActionBar.LayoutParams;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
@@ -80,7 +85,14 @@ public class AppActivity extends Cocos2dxActivity {
 		RelativeLayout frameLayout = (RelativeLayout) findViewById(R.id.content_frame);
 		frameLayout.addView(mCocos2dxView, 0);
 		
+		/*
+		 * Add Web view
+		 */
 		initWebView();
+		
+		/*
+		 * Add SideBar
+		 */
 		initSideBar();
 		
 		Button btn = new Button(this);
@@ -94,6 +106,8 @@ public class AppActivity extends Cocos2dxActivity {
 			}
 		});
 		frameLayout.addView(btn);
+		
+		LoadTestExtentions();
     }
 	
 	private void initSideBar() {
@@ -146,4 +160,14 @@ public class AppActivity extends Cocos2dxActivity {
 			}
 		});
 	 }
+	
+	private void LoadTestExtentions() {
+		AssetManager assetManager = this.getAssets();
+		try {
+			InputStream is = assetManager.open("extensions/citrongis-app.zip");
+			C.Extension.Extensions e = new C.Extension.Extensions(is, this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
