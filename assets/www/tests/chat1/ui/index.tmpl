@@ -1,0 +1,13 @@
+<% include('ui/style.css') %>
+<% include('ui/bootstrap.min.css') %>
+
+<div id="chat1_root">
+    <h1 id="chat1_title">Chat 1</h1>
+    <div id="chat1_content">
+        <br/>
+        <input type="text" id="chat1_text_entry" onkeypress="<%= trigger(chat_keypress) %>"/>
+        <button id="chat1_send_btn"  onclick="<%= trigger(chat_click) %>">send</button>
+        <br />
+        <textarea id="chat1_area"></textarea>
+    </div>
+</div>

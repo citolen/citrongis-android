@@ -1,0 +1,54 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <script type="text/javascript" src="src/lib/jszip.js"></script>
+        <script type="text/javascript" src="src/lib/proj4.js"></script>
+        <script type="text/javascript" src="src/lib/ejs.js"></script>
+        <script type="text/javascript" src="src/lib/EventEmitter.js"></script>
+
+        <script type="text/javascript" src="src/js/Utils/Comparison.js"></script>
+        <script type="text/javascript" src="src/js/Utils/Intersection.js"></script>
+        <script type="text/javascript" src="src/js/Utils/Inheritance.js"></script>
+        <script type="text/javascript" src="src/js/Utils/Object.js"></script>
+        <script type="text/javascript" src="src/js/Utils/Context.js"></script>
+        <script type="text/javascript" src="src/js/Utils/Path.js"></script>
+
+        <script type="text/javascript" src="src/js/Geometry/Point.js"></script>
+        <script type="text/javascript" src="src/js/Geometry/Vector2.js"></script>
+        <script type="text/javascript" src="src/js/Geometry/Vector3.js"></script>
+        <script type="text/javascript" src="src/js/Geometry/BoundingBox.js"></script>
+        <script type="text/javascript" src="src/js/Helpers/CoordinatesHelper.js"></script>
+        <script type="text/javascript" src="src/js/Helpers/ProjectionsHelper.js"></script>
+        <script type="text/javascript" src="src/js/Extension/Require.js"></script>
+        <script type="text/javascript" src="src/js/Extension/UI/include.js"></script>
+        <script type="text/javascript" src="src/js/Extension/UI/trigger.js"></script>
+        <script type="text/javascript" src="src/js/Extension/UI/Bridge.js"></script>
+        <script type="text/javascript" src="src/js/Extension/UI/UI.js"></script>
+
+        <script type="text/javascript" src="src/js/Extension/Module.js"></script>
+        <script type="text/javascript" src="src/js/Extension/Extension.js"></script>
+        <script type="text/javascript" src="src/js/Extension/Manager.js"></script>
+        
+        <script type="text/javascript">
+        function LoadExtention(data) {
+        
+        	console.log("LoadExtention " + data);
+        	var extZip = new JSZip(data, { base64: true });
+        	//extZip.load(data);
+        	
+        	var e = new C.Extension.Extension(extZip);
+        	C.Extension.Manager.register(e);
+        	//debugPackage(e.package);
+
+        	e.module.ui.on('display', function (element) {
+        	   document.body.appendChild(element);
+        	});
+
+        	e.run();
+
+        	console.log(e.module.exports);
+        }
+        </script>
+    </body>
+</html>

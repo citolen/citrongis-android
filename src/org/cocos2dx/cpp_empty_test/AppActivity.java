@@ -23,15 +23,18 @@ THE SOFTWARE.
 ****************************************************************************/
 package org.cocos2dx.cpp_empty_test;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.StringWriter;
 
 import javascript.CodeBinding;
 
 import org.cocos2dx.lib.Cocos2dxActivity;
 import org.models.ImageAdapter;
 
-import org.cocos2dx.cpp_empty_test.R
 import android.annotation.SuppressLint;
 import android.app.ActionBar.LayoutParams;
 import android.content.Context;
@@ -39,12 +42,15 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
+import android.webkit.ConsoleMessage;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -66,6 +72,8 @@ public class AppActivity extends Cocos2dxActivity {
 	private final static String TAG = AppActivity.class.getSimpleName();
     private View mCocos2dxView;
     
+    private WebView mWebView;
+    
 	@SuppressLint("NewApi")
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,28 +94,26 @@ public class AppActivity extends Cocos2dxActivity {
 		frameLayout.addView(mCocos2dxView, 0);
 		
 		/*
-		 * Add Web view
-		 */
-		initWebView();
-		
-		/*
 		 * Add SideBar
 		 */
 		initSideBar();
 		
-		Button btn = new Button(this);
-		btn.setText("call jsfunc");
-		btn.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-		btn.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				myButtonClicked(v);
-			}
-		});
-		frameLayout.addView(btn);
+//		Button btn = new Button(this);
+//		btn.setText("call jsfunc");
+//		btn.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
+//		btn.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				myButtonClicked(v);
+//			}
+//		});
+//		frameLayout.addView(btn);
 		
-		LoadTestExtentions();
+		/*
+		 * Add Web view
+		 */
+		initWebView();
     }
 	
 	private void initSideBar() {
@@ -121,6 +127,10 @@ public class AppActivity extends Cocos2dxActivity {
 	            if ((Integer)imageAdapter.getItem(position) == R.drawable.menu_user) {
 	            	Intent intent = new Intent(context, LoginActivity.class);
 	                startActivity(intent);
+	            } else if ((Integer)imageAdapter.getItem(position) == R.drawable.menu_applications) {
+	        		LoadTestExtentions("extensions/citrongis-app.zip");
+	        		LoadTestExtentions("extensions/chat.zip");
+	        		LoadTestExtentions("extensions/chat1.zip");
 	            }
 	        }
 	    });
@@ -131,8 +141,18 @@ public class AppActivity extends Cocos2dxActivity {
 	 */
 	@SuppressLint("SetJavaScriptEnabled")
 	private void initWebView() {
-		WebView webView = (WebView) findViewById(R.id.main_webView);
-		webView.setOnTouchListener(new OnTouchListener() {
+		mWebView = (WebView) findViewById(R.id.main_webView);
+		
+		mWebView.setWebChromeClient(new WebChromeClient() {
+		  public boolean onConsoleMessage(ConsoleMessage cm) {
+		    Log.d("WebView", cm.message() + " -- From line "
+		                         + cm.lineNumber() + " of "
+		                         + cm.sourceId() );
+		    return true;
+		  }
+		});
+		
+		mWebView.setOnTouchListener(new OnTouchListener() {
 			
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
@@ -140,32 +160,38 @@ public class AppActivity extends Cocos2dxActivity {
 				return false;
 			}
 		});
-		webView.getSettings().setJavaScriptEnabled(true); // Unable javascript
-		webView.getSettings().setBuiltInZoomControls(false); // Disable Zoom
-		
-		webView.loadUrl("file:///android_asset/www/page.html");
-		webView.addJavascriptInterface(new CodeBinding(this), "Android");
-		webView.setBackgroundColor(0x00000000); // Set WebView transparent
+		mWebView.getSettings().setJavaScriptEnabled(true); // Unable javascript
+		mWebView.getSettings().setBuiltInZoomControls(true); // Disable Zoom
+		mWebView.loadUrl("file:///android_asset/www/JavascriptLoader.html");
+//		mWebView.addJavascriptInterface(new CodeBinding(this), "Android");
+		mWebView.setBackgroundColor(0x00000000); // Set WebView transparent
 	}
 	
-	public void myButtonClicked(View view) {
-		
-	     Log.d(TAG, "my button cliked");
-	     
-	     runOnUiThread(new Runnable() {
-			@Override
-			public void run() {
-			     WebView webView = (WebView) findViewById(R.id.main_webView);
-			     webView.loadUrl("javascript:jsfunc()");
-			}
-		});
-	 }
+//	public void myButtonClicked(View view) {
+//		
+//	     Log.d(TAG, "my button cliked");
+//	     
+//	     runOnUiThread(new Runnable() {
+//			@Override
+//			public void run() {
+//			     WebView webView = (WebView) findViewById(R.id.main_webView);
+//			     webView.loadUrl("javascript:jsfunc()");
+//			}
+//		});
+//	 }
 	
-	private void LoadTestExtentions() {
+	private void LoadTestExtentions(String path) {
 		AssetManager assetManager = this.getAssets();
 		try {
-			InputStream is = assetManager.open("extensions/citrongis-app.zip");
-			C.Extension.Extensions e = new C.Extension.Extensions(is, this);
+			InputStream is = assetManager.open(path);
+			int n = 0;
+		    byte[] buffer = new byte[1024 * 4];
+			StringBuilder sb = new StringBuilder();
+			while (-1 != (n = is.read(buffer)))
+				sb.append(new String(Base64.encode(buffer, 0, n, Base64.DEFAULT)));
+		    
+			mWebView.loadUrl("javascript:LoadExtention('"+sb.toString()+"');");
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

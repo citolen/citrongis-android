@@ -1,0 +1,54 @@
+<% include('lib/coffee-script.js'); %>
+<% include('lib/Chart.js') %>
+<% include('../js/index.js'); %>
+<% include('html/css/style.css') %>
+<% include('html/css/bootstrap.min.css') %>
+<% include('html/css/slider.css') %>
+
+<div id="citron_div">
+    <h1 id="citron_title"><%= myvar %></h1>
+    <div id="citron_content">
+        <br/>
+        <span>Comming from strings.json: <%= strings.default.APPLICATION_NAME %></span><br/>
+        <button class="btn btn-default" onclick="<%= trigger(myfunc) %><%= trigger(coffeeFunc) %>">TEST bridge</button><br/>
+        <span>Coffee Script test<br/>
+            <code>times = (a, b) -> a * b<br/>
+return times(2, 5)
+            </code><br/>
+            ==<br/>
+            <%= coffee_result %>
+        </span><br/>
+        <canvas id="canvas" height="200" width="200"></canvas><br/>
+        
+        <code>&lt;section&gt;</code>
+        <pre>&lt;p&gt;Sample text here...&lt;/p&gt;</pre>
+        <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputEmail2">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">@</div>
+              <input class="form-control" type="email" placeholder="Enter email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="exampleInputPassword2">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Remember me
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Sign in</button>
+        </form>
+        <div id="slider">
+            <input class="bar" type="range" id="rangeinput" value="50" onchange="rangevalue.value=value"/>
+            <span class="highlight"></span>
+            <output id="rangevalue">50</output>
+        </div>
+    </div>
+</div>

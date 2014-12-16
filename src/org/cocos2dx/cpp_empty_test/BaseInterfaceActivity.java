@@ -29,8 +29,8 @@ public class BaseInterfaceActivity extends ActionBarActivity {
 		FontsOverride.setDefaultFont(this, "DEFAULT", "fonts/Nexa Bold.otf");
 		
 		/* Override default action bar */
-		getActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM); 
-		getActionBar().setCustomView(R.layout.actionbar);
+		getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM); 
+		getSupportActionBar().setCustomView(R.layout.actionbar);
 		TextView actionbar_title = (TextView) findViewById(R.id.actionbar_title);
 		actionbar_title.setText(mActivityName);
 		
