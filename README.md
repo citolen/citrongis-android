@@ -1,9 +1,8 @@
 ## Prerequisites:
 
-* Android NDK (tested with r9d)
-* Android SDK **OR** Eclipse ADT Bundle
-* Android AVD target installed
-* Cocos2d-x 3.2
+* Android NDK (tested with r10d)
+* Android SDK (android-21 and android-10)
+* Cocos2d-x 3.3
 
 ## Installation
 
@@ -27,6 +26,9 @@ $ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
 	1. File->New->Project->Android Project From Existing Code.
 	2. Click **Browse** button and open `cocos2d-x/cocos2dx/cocos/platform/android/java` directory.
 	3. Click **Finish** to add project.
+
+Right click on the project -> Properties -> Android.
+The project build target should be plateform 2.3.3.
 
 2. https://developer.android.com/tools/support-library/setup.html
 
