@@ -30,11 +30,9 @@ $ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
 Right click on the project -> Properties -> Android.
 The project build target should be plateform 2.3.3.
 
-2. https://developer.android.com/tools/support-library/setup.html
-
-3. Configuration CitronGIS
-   	1. CitronGIS->Properties->Android->Library
-	   Set the path to the previous project if it is not set.
+2. Download the Support Libraries
+here -> https://developer.android.com/tools/support-library/setup.html
+import project : <sdk>/extras/android/support/v7/appcompat
 
 ## Install via the shell
 
