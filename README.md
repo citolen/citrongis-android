@@ -31,8 +31,8 @@ Right click on the project -> Properties -> Android.
 The project build target should be plateform 2.3.3.
 
 2. Download the Support Libraries
-here -> https://developer.android.com/tools/support-library/setup.html
-import project : <sdk>/extras/android/support/v7/appcompat
+	1. here -> https://developer.android.com/tools/support-library/setup.html
+	2. import project : <sdk>/extras/android/support/v7/appcompat
 
 ## Install via the shell
 
