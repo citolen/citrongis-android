@@ -156,13 +156,17 @@ public class AppActivity extends Cocos2dxActivity {
 			
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
+				Log.d("WEBVIEW", "TOUCH");
 				mCocos2dxView.dispatchTouchEvent(event); // Send event to cocos2dx view
+				v.onTouchEvent(event);
 				return false;
 			}
 		});
+		
 		mWebView.getSettings().setJavaScriptEnabled(true); // Unable javascript
-		mWebView.getSettings().setBuiltInZoomControls(true); // Disable Zoom
-		mWebView.loadUrl("file:///android_asset/www/JavascriptLoader.html");
+		mWebView.getSettings().setBuiltInZoomControls(false); // Disable Zoom
+		mWebView.loadUrl("file:///android_asset/www/toto.html");
+//		mWebView.loadUrl("file:///android_asset/www/page.html");
 //		mWebView.addJavascriptInterface(new CodeBinding(this), "Android");
 		mWebView.setBackgroundColor(0x00000000); // Set WebView transparent
 	}
@@ -189,7 +193,6 @@ public class AppActivity extends Cocos2dxActivity {
 			StringBuilder sb = new StringBuilder();
 			while (-1 != (n = is.read(buffer)))
 				sb.append(new String(Base64.encode(buffer, 0, n, Base64.DEFAULT)));
-		    
 			mWebView.loadUrl("javascript:LoadExtention('"+sb.toString()+"');");
 			
 		} catch (IOException e) {

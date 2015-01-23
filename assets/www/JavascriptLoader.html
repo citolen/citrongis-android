@@ -1,7 +1,7 @@
 <html>
     <head>
     </head>
-    <body>
+    <body onclick="BodyTouched(this);">
         <script type="text/javascript" src="src/lib/jszip.js"></script>
         <script type="text/javascript" src="src/lib/proj4.js"></script>
         <script type="text/javascript" src="src/lib/ejs.js"></script>
@@ -31,6 +31,10 @@
         <script type="text/javascript" src="src/js/Extension/Manager.js"></script>
         
         <script type="text/javascript">
+        consol.log("JAVASCRIPT LOG TEST");
+        function BodyTouch(e) {
+        	console.log("Body Touched")
+        }
         function LoadExtention(data) {
         
         	console.log("LoadExtention " + data);

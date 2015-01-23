@@ -4,7 +4,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 LOCAL_MODULE:= proj
 LOCAL_LDLIBS:= -lm
-LOCAL_SRC_FILES := libs/libproj.so
+LOCAL_SRC_FILES := libs/proj4/libproj.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 # Build Cocos2d module
@@ -29,23 +29,26 @@ LOCAL_SRC_FILES := 	Core/main.cpp \
                    
 # Includes directories
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/Classes \
-					$(LOCAL_PATH)/Core
+					$(LOCAL_PATH)/Core \
+					$(COCOS_X_ROOT)/extensions \
+					$(LOCAL_PATH)/libs/proj4
 
-LOCAL_WHOLE_STATIC_LIBRARIES := cocos2dx_static cocosdenshion_static
-LOCAL_STATIC_LIBRARIES += clibs
+LOCAL_WHOLE_STATIC_LIBRARIES := cocos2dx_static cocosdenshion_static clibs
 LOCAL_SHARED_LIBRARIES += proj
 
 include $(BUILD_SHARED_LIBRARY)
 
-# Test if COCOS2DX env variable exists
-COCOS_PATH  := $(COCOS2DX)
+
+# Test if COCOS_X_ROOT env variable exists
+COCOS_PATH  := $(COCOS_X_ROOT)
 ifndef COCOS_PATH
-$(warning Missing COCOS2DX environnement variable)
+$(warning Missing COCOS_X_ROOT environnement variable)
 endif
 
 # import cocos modules
-$(call import-add-path,$(COCOS2DX)/cocos)
-$(call import-add-path,$(COCOS2DX)/external)
+$(call import-add-path,$(COCOS_X_ROOT)/cocos)
+$(call import-add-path,$(COCOS_X_ROOT)/)
+$(call import-add-path,$(COCOS_X_ROOT)/external)
 
 $(call import-module,.)
 $(call import-module,audio/android)

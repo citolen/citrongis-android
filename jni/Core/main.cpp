@@ -33,7 +33,6 @@ JNIEXPORT jstring JNICALL Java_org_javascript_Testwrap_testfunc(JNIEnv *env, jcl
 }
 #endif
 
-
 void cocos_android_app_init (JNIEnv* env, jobject thiz) {
     LOGD("cocos_android_app_init");
     AppDelegate *pAppDelegate = new AppDelegate();
