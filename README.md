@@ -1,7 +1,7 @@
 ## Prerequisites:
 
-* Android NDK (tested with r10d)
-* Android SDK (android-21 and android-10)
+* Android NDK (r10d 32bits)
+* Android SDK (android-19 and android-10)
 * Cocos2d-x 3.3
 
 ## Installation
@@ -11,14 +11,8 @@
 $ python download-deps.py
 $ python setup.py
 ```
-   2. Set one more env variable
-``` shell
-$ export COCOS2DX=`pwd`
-```
-**or**
-``` shell
-$ echo "export COCOS2DX=`pwd`" >> ~/.bashrc
-```
+   2. Set cocos2dx env variable
+Env variable 'COCOS_X_ROOT' must point on your cocos2dx directory.
 
 ## Building project
 		
@@ -31,7 +25,9 @@ Right click on the project -> Properties -> Android.
 The project build target should be plateform 2.3.3.
 
 2. Download the Support Libraries
-	1. here -> https://developer.android.com/tools/support-library/setup.html
+	1. In the Android SDK Manager
+Download: Extras/Android Support Repository
+Download: Extras/Android Support Library
 	2. import project : <sdk>/extras/android/support/v7/appcompat
 
 ## Install via the shell
