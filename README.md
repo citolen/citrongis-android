@@ -25,9 +25,7 @@ Right click on the project -> Properties -> Android.
 The project build target should be plateform 2.3.3.
 
 2. Download the Support Libraries
-	1. In the Android SDK Manager
-Download: Extras/Android Support Repository
-Download: Extras/Android Support Library
+	1. In the Android SDK Manager, Download 'Extras/Android Support Repository' and 'Extras/Android Support Library'
 	2. import project : <sdk>/extras/android/support/v7/appcompat
 
 ## Install via the shell
